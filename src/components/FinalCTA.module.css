@@ -1,0 +1,203 @@
+.ctaSection {
+  padding: var(--s-900) 0;
+  background-color: var(--surface-1);
+}
+
+.ctaBox {
+  background-color: #0f172a; /* Solid deep slate navy - flat, no gradient (B4) */
+  border-radius: var(--r-3xl);
+  padding: var(--s-800) var(--s-600);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.25);
+  text-align: center;
+}
+
+.contentWrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.topLabel {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  color: var(--brand-border);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--s-300);
+}
+
+.title {
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  text-wrap: balance;
+  margin-bottom: var(--s-300);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-bottom: var(--s-500);
+  text-wrap: pretty;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-200);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-500);
+}
+
+.primaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  padding: 12px var(--s-300);
+  background-color: var(--brand);
+  color: #ffffff;
+  border-radius: var(--r-xl);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  border: 1px solid var(--brand);
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base);
+}
+.primaryAction:hover {
+  background-color: var(--brand-hover);
+  transform: translateY(-2px);
+}
+.primaryAction:active {
+  transform: scale(0.98);
+}
+.primaryAction:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.whatsappAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  padding: 12px var(--s-300);
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: var(--r-xl);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  border: 1px solid #25d366;
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base);
+}
+.whatsappAction:hover {
+  background-color: #20ba59;
+  transform: translateY(-2px);
+}
+.whatsappAction:active {
+  transform: scale(0.98);
+}
+.whatsappAction:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  padding: 12px var(--s-300);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--r-xl);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              border-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base);
+}
+.secondaryAction:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+.secondaryAction:active {
+  transform: scale(0.98);
+}
+.secondaryAction:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.subTextRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-300);
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  .ctaBox {
+    padding: var(--s-600) var(--s-300);
+  }
+  .title {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .actionButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .primaryAction, .whatsappAction, .secondaryAction {
+    justify-content: center;
+  }
+  .subTextRow {
+    flex-direction: column;
+    gap: var(--s-75);
+  }
+}
+
+@media (max-width: 640px) {
+  .ctaSection {
+    padding: var(--s-600) 0;
+  }
+  .ctaBox {
+    padding: var(--s-500) var(--s-200);
+    border-radius: var(--r-2xl);
+  }
+  .title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: var(--s-400);
+  }
+  .primaryAction, .whatsappAction, .secondaryAction {
+    font-size: 15px;
+    padding: 10px var(--s-200);
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,257 @@
+.testimonialsSection {
+  padding: var(--s-900) 0;
+  background-color: var(--bg-app);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--s-700);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  margin-bottom: var(--s-100);
+}
+
+.sectionTitle {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-wrap: balance;
+  margin-bottom: var(--s-200);
+  letter-spacing: -0.01em;
+}
+
+.sectionDescription {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-400);
+  margin-bottom: var(--s-600);
+}
+
+.reviewCard {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-2xl);
+  padding: var(--s-400);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  transition: transform var(--duration-interaction) var(--ease-base),
+              border-color var(--duration-interaction) var(--ease-base);
+}
+.reviewCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-border);
+}
+
+.starsRow {
+  color: var(--star-gold);
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: var(--s-200);
+}
+
+.quoteText {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--text-main);
+  margin-bottom: var(--s-400);
+  flex: 1;
+  text-wrap: pretty;
+}
+
+.authorMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--s-200);
+  padding-top: var(--s-200);
+  border-top: 1px solid var(--border-color);
+}
+
+.authorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--brand-surface);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--brand-border);
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.authorLocation {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--text-sub);
+}
+
+/* Rating Summary Box */
+.ratingBanner {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-2xl);
+  padding: var(--s-300) var(--s-500);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-300);
+}
+
+.ratingScore {
+  display: flex;
+  align-items: center;
+  gap: var(--s-200);
+}
+
+.scoreNumber {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.ratingInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bannerStars {
+  color: var(--star-gold);
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.reviewCount {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.mapsReviewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--brand);
+  padding: var(--s-100) var(--s-200);
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-xl);
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              color var(--duration-interaction) var(--ease-base);
+}
+.mapsReviewLink:hover {
+  background-color: var(--brand-surface);
+  border-color: var(--brand-border);
+}
+.mapsReviewLink:focus-visible {
+  outline: 2px solid var(--brand);
+}
+
+@media (max-width: 1180px) and (min-width: 861px) {
+  .cardsGrid {
+    gap: var(--s-300);
+  }
+}
+
+@media (max-width: 860px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--s-300);
+  }
+  .ratingBanner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonialsSection {
+    padding: var(--s-600) 0;
+  }
+  .header {
+    margin-bottom: var(--s-500);
+  }
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .sectionDescription {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .reviewCard {
+    padding: var(--s-300) var(--s-200);
+  }
+  .quoteText {
+    font-size: 15px;
+    line-height: 23px;
+    margin-bottom: var(--s-300);
+  }
+  .cardsGrid {
+    margin-bottom: var(--s-400);
+  }
+  .ratingBanner {
+    padding: var(--s-300) var(--s-200);
+    gap: var(--s-200);
+    text-align: center;
+  }
+  .ratingScore {
+    justify-content: center;
+  }
+  .scoreNumber {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .mapsReviewLink {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .sectionTitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

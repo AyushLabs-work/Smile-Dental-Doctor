@@ -1,0 +1,291 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-300);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modalCard {
+  position: relative;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-3xl);
+  padding: var(--s-500);
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  animation: modalEnter 300ms var(--ease-base) forwards;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--s-300);
+  right: var(--s-300);
+  background: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-lg);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              color var(--duration-interaction) var(--ease-base);
+}
+.closeButton:hover {
+  background-color: var(--surface-2);
+  color: var(--text-main);
+}
+.closeButton:focus-visible {
+  outline: 2px solid var(--brand);
+}
+
+.modalHeader {
+  margin-bottom: var(--s-400);
+  padding-right: var(--s-400);
+}
+
+.badgePill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-50);
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  color: var(--brand-hover);
+  border-radius: var(--r-full);
+  padding: 3px var(--s-100);
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: var(--s-100);
+}
+
+.liveGreenDot {
+  width: 6px;
+  height: 6px;
+  background-color: #22c55e;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--s-50);
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--text-sub);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-200);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.requiredMark {
+  color: #ef4444;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 14px;
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-xl);
+  color: var(--text-main);
+  transition: border-color var(--duration-interaction) var(--ease-base),
+              background-color var(--duration-interaction) var(--ease-base);
+}
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-75);
+  padding: 12px var(--s-300);
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--r-xl);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  margin-top: var(--s-100);
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base);
+}
+.submitBtn:hover {
+  background-color: #20ba59;
+  transform: translateY(-1px);
+}
+.submitBtn:active {
+  transform: scale(0.98);
+}
+.submitBtn:focus-visible {
+  outline: 3px solid #25d366;
+  outline-offset: 2px;
+}
+
+.guaranteeText {
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-sub);
+  margin-top: var(--s-50);
+}
+
+/* Success view */
+.successState {
+  text-align: center;
+  padding: var(--s-400) var(--s-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.successCircle {
+  width: 56px;
+  height: 56px;
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  color: var(--brand);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--s-300);
+}
+
+.successTitle {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: var(--s-100);
+}
+
+.successMessage {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--text-muted);
+  max-width: 380px;
+  margin-bottom: var(--s-400);
+}
+
+.directCallBox {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-xl);
+  padding: var(--s-200);
+  width: 100%;
+  margin-bottom: var(--s-300);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.callPrompt {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.urgentCallBtn {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.doneBtn {
+  padding: 8px 32px;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-lg);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+}
+.doneBtn:hover {
+  background-color: var(--border-color);
+}
+
+@media (max-width: 640px) {
+  .modalOverlay {
+    padding: var(--s-100);
+    align-items: flex-end;
+  }
+  .modalCard {
+    padding: var(--s-300);
+    border-radius: var(--r-2xl) var(--r-2xl) 0 0;
+    max-height: 92vh;
+    border-bottom: none;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .closeButton {
+    top: var(--s-200);
+    right: var(--s-200);
+    width: 32px;
+    height: 32px;
+  }
+}

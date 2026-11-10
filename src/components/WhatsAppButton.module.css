@@ -1,0 +1,126 @@
+.waContainer {
+  position: fixed;
+  bottom: var(--s-400);
+  right: var(--s-400);
+  z-index: 999;
+}
+
+/* Desktop: icon-only circle */
+.pillLabel {
+  display: none !important;
+}
+
+.waFloatingBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px -4px rgba(37, 211, 102, 0.45);
+  border: 2px solid #ffffff;
+  transition: transform var(--duration-interaction) var(--ease-base),
+              background-color var(--duration-interaction) var(--ease-base),
+              box-shadow var(--duration-interaction) var(--ease-base);
+  text-decoration: none;
+}
+.waFloatingBtn:hover {
+  background-color: #20ba59;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -4px rgba(37, 211, 102, 0.55);
+}
+.waFloatingBtn:active {
+  transform: scale(0.97);
+}
+.waFloatingBtn:focus-visible {
+  outline: 3px solid #25d366;
+  outline-offset: 3px;
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pillLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--s-75);
+}
+
+.statusLiveDot {
+  width: 7px;
+  height: 7px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.labelText {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* Subtle radar ring animation (Part B7 weighted curves) */
+.pulseRadar {
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--r-full);
+  border: 2px solid rgba(37, 211, 102, 0.4);
+  animation: radarExpand 2.4s var(--ease-base) infinite;
+  pointer-events: none;
+}
+
+@keyframes radarExpand {
+  0% { transform: scale(0.96); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(0.96); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseRadar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .waContainer {
+    bottom: 16px;
+    right: 16px;
+    z-index: 1000;
+    transition: opacity 300ms var(--ease-base), transform 300ms var(--ease-base);
+  }
+
+  .hideOnMobile {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(20px) !important;
+  }
+
+  .waFloatingBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .iconWrapper {
+    width: 26px;
+    height: 26px;
+  }
+
+  .iconWrapper svg {
+    width: 26px;
+    height: 26px;
+  }
+}

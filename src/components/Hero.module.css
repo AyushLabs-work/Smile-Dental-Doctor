@@ -1,0 +1,629 @@
+.heroSection {
+  padding-top: 148px;
+  padding-bottom: var(--s-800);
+  background-color: var(--bg-app);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--s-700);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── EYEBROW CATEGORY TAG ─── */
+.eyebrowTag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  padding: 4px var(--s-100);
+  border-radius: var(--r-full);
+  margin-bottom: var(--s-300);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.eyebrowBeacon {
+  width: 6px;
+  height: 6px;
+  background-color: var(--brand);
+  border-radius: 50%;
+}
+
+/* ─── HEADLINE (Part B5) ─── */
+.heroTitle {
+  max-width: 680px;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 600;
+  text-wrap: balance;
+  margin-bottom: var(--s-300);
+  background: linear-gradient(90deg, #000000 0%, #666666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  padding-bottom: 4px;
+}
+
+.heroLead {
+  max-width: 540px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+  margin-bottom: var(--s-500);
+}
+
+/* ─── ACTION BUTTONS (Clean unified sizing) ─── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-200);
+  margin-bottom: var(--s-500);
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  padding: 12px var(--s-300);
+  background-color: var(--brand);
+  color: #ffffff;
+  border-radius: var(--r-xl);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  border: 1px solid var(--brand);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base),
+              box-shadow var(--duration-interaction) var(--ease-base);
+}
+.primaryCta:hover {
+  background-color: var(--brand-hover);
+  border-color: var(--brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.36);
+}
+.primaryCta:active {
+  transform: scale(0.98);
+}
+.primaryCta:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* WhatsApp CTA */
+.whatsappCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  padding: 12px var(--s-300);
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: var(--r-xl);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  border: 1px solid #25d366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base),
+              box-shadow var(--duration-interaction) var(--ease-base);
+}
+.whatsappCta:hover {
+  background-color: #20ba59;
+  border-color: #20ba59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.36);
+}
+.whatsappCta:active {
+  transform: scale(0.98);
+}
+.whatsappCta:focus-visible {
+  outline: 2px solid #25d366;
+  outline-offset: 3px;
+}
+
+.ctaIconPulse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── STREAMLINED PROOF ROW ─── */
+.proofStrip {
+  display: flex;
+  align-items: center;
+  gap: var(--s-300);
+  flex-wrap: wrap;
+  padding-top: var(--s-300);
+  border-top: 1px solid var(--border-color);
+}
+
+.proofItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+}
+
+.proofDivider {
+  width: 1px;
+  height: 18px;
+  background-color: var(--border-color);
+}
+
+.statusPulseDot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coreDot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+}
+.pulseRing {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(34, 197, 94, 0.25);
+  animation: pulseBeacon 2s var(--ease-base) infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0.3; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+
+.checkIcon, .pinIcon {
+  color: var(--brand);
+}
+
+.proofText {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* ─── VISUAL STAGE & SHOWCASE CARD (Part B3 Nested Radius) ─── */
+.visualStage {
+  position: relative;
+}
+
+.showcaseCard {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-3xl);
+  padding: var(--s-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-100);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+.mainPhotoWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-2);
+}
+
+.mainHeroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-layout) var(--ease-base);
+}
+.mainPhotoWrapper:hover .mainHeroImg {
+  transform: scale(1.03);
+}
+
+/* Overlaid Verified Clinic Status Badge */
+.liveFacilityPill {
+  position: absolute;
+  bottom: var(--s-100);
+  left: var(--s-100);
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 6px var(--s-100);
+  border-radius: var(--r-lg);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--s-75);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.liveGreenBeacon {
+  width: 7px;
+  height: 7px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+/* Anchored Integrated Rating Tag */
+.anchoredRatingTag {
+  position: absolute;
+  top: var(--s-100);
+  right: var(--s-100);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--r-lg);
+  padding: 6px var(--s-100);
+  display: flex;
+  align-items: center;
+  gap: var(--s-75);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.ratingStarIcon {
+  color: var(--star-gold);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.ratingTextCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.ratingValue {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.ratingSource {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+/* Sub-grid of Clinic Operatories */
+.subGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-100);
+}
+
+.subPhotoWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  aspect-ratio: 4 / 3;
+  background-color: var(--surface-2);
+}
+
+.subImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-layout) var(--ease-base);
+}
+.subPhotoWrapper:hover .subImg {
+  transform: scale(1.04);
+}
+
+.subCaption {
+  position: absolute;
+  bottom: var(--s-75);
+  left: var(--s-75);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--text-main);
+  padding: 3px var(--s-75);
+  border-radius: var(--r-md);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--s-50);
+}
+
+.captionDot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--brand);
+  border-radius: 50%;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ─── */
+@media (max-width: 1180px) and (min-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--s-400);
+  }
+  .heroTitle {
+    font-size: 46px;
+    line-height: 54px;
+  }
+}
+
+/* ─── MOBILE LAYOUT (Screens below 768px) ─── */
+@media (max-width: 767px) {
+  .heroSection {
+    padding-top: 88px;
+    padding-bottom: 48px;
+  }
+
+  .heroGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 1. 20px space between clinic photo and eyebrow badge */
+  }
+
+  /* 3. Move main clinic photo ABOVE the headline, right under header */
+  .visualStage {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .showcaseCard {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: 0;
+  }
+
+  /* 2. Photo: very light overlay, brightness filter, rounded corners */
+  .mainPhotoWrapper {
+    position: relative;
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+    aspect-ratio: 16 / 10;
+  }
+
+  .mainHeroImg {
+    filter: brightness(1.05) contrast(1.02);
+  }
+
+  .mainPhotoWrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 40%, rgba(15, 23, 42, 0.12) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .liveFacilityPill {
+    bottom: 12px;
+    left: 12px;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: var(--r-md);
+    z-index: 2;
+  }
+
+  /* 3. Rating badge: 15px value, 12px reviews, generous padding */
+  .anchoredRatingTag {
+    top: 12px;
+    right: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ratingStarIcon {
+    font-size: 16px;
+  }
+
+  .ratingValue {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+
+  .ratingSource {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    color: var(--text-sub);
+  }
+
+  /* Hide the two small photos below it on mobile */
+  .subGrid {
+    display: none !important;
+  }
+
+  /* Text column placed below the photo */
+  .heroContent {
+    order: 2;
+    width: 100%;
+  }
+
+  /* 1. 12px between badge and headline */
+  .eyebrowTag {
+    font-size: 11px;
+    line-height: 16px;
+    padding: 3px 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  /* Headline: 34-36px, font-weight 700, line-height 1.15. Keep 3-line break */
+  .heroTitle {
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-top: 0;
+    margin-bottom: 14px;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--text-main);
+    background-clip: unset;
+    color: var(--text-main);
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  /* Body paragraph: 16px, line-height 1.6, softer gray color, 16px space below it */
+  .heroLead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 16px;
+  }
+
+  /* Buttons: Call to consult (solid teal), WhatsApp chat (outlined green), 12px gap, 52px height */
+  .ctaRow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .primaryCta {
+    width: 100%;
+    height: 52px;
+    min-height: 52px;
+    background-color: var(--brand);
+    color: #ffffff;
+    border: 1px solid var(--brand);
+    border-radius: var(--r-xl);
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+  }
+
+  .whatsappCta {
+    width: 100%;
+    height: 52px;
+    min-height: 52px;
+    background-color: #ffffff;
+    border: 1.5px solid #22c55e;
+    color: #16a34a;
+    border-radius: var(--r-xl);
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: none;
+  }
+
+  .whatsappCta svg {
+    color: #16a34a;
+  }
+
+  .whatsappCta:hover {
+    background-color: #f0fdf4;
+    border-color: #16a34a;
+    color: #15803d;
+  }
+
+  /* 4. Info chips: text 14px, padding 10px 14px, 8px gap between chips */
+  .proofStrip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 0;
+    border-top: none;
+    width: 100%;
+  }
+
+  .proofDivider {
+    display: none !important;
+  }
+
+  .proofItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--r-full);
+    flex-shrink: 0;
+  }
+
+  .proofText {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #1e293b;
+  }
+
+  .checkIcon,
+  .pinIcon {
+    width: 16px;
+    height: 16px;
+    color: var(--brand);
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroTitle {
+    font-size: 29px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .proofItem {
+    padding: 8px 12px;
+  }
+
+  .proofText {
+    font-size: 13px;
+  }
+}

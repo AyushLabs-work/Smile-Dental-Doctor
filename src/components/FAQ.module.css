@@ -1,0 +1,134 @@
+.faqSection {
+  padding: var(--s-900) 0;
+  background-color: var(--surface-1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--s-700);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  margin-bottom: var(--s-100);
+}
+
+.sectionTitle {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-wrap: balance;
+  margin-bottom: var(--s-200);
+  letter-spacing: -0.01em;
+}
+
+.sectionDescription {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+.accordionWrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-200);
+}
+
+.faqCard {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: border-color var(--duration-interaction) var(--ease-base),
+              box-shadow var(--duration-interaction) var(--ease-base);
+}
+
+.faqCardOpen {
+  border-color: var(--brand-border);
+  box-shadow: 0 4px 16px -4px rgba(13, 148, 136, 0.08);
+}
+
+.questionButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-300);
+  padding: var(--s-300) var(--s-400);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.questionButton:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -2px;
+}
+
+.questionText {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-wrap: balance;
+}
+
+.iconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-lg);
+  background-color: var(--surface-1);
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--duration-layout) var(--ease-base),
+              background-color var(--duration-interaction) var(--ease-base),
+              color var(--duration-interaction) var(--ease-base);
+}
+.faqCardOpen .iconWrap {
+  background-color: var(--brand-surface);
+  color: var(--brand);
+}
+
+.iconRotated {
+  transform: rotate(45deg);
+}
+
+.answerPanel {
+  padding: 0 var(--s-400) var(--s-300);
+}
+
+.answerText {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+@media (max-width: 640px) {
+  .questionButton {
+    padding: var(--s-200) var(--s-300);
+  }
+  .answerPanel {
+    padding: 0 var(--s-300) var(--s-200);
+  }
+  .questionText {
+    font-size: 15px;
+  }
+}

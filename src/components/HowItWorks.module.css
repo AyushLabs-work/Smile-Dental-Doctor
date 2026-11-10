@@ -1,0 +1,293 @@
+.processSection {
+  padding: var(--s-900) 0;
+  background-color: var(--bg-app);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--s-700);
+}
+
+.eyebrowTag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  padding: 4px var(--s-100);
+  border-radius: var(--r-full);
+  margin-bottom: var(--s-300);
+}
+
+.eyebrowBeacon {
+  width: 6px;
+  height: 6px;
+  background-color: var(--brand);
+  border-radius: 50%;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-wrap: balance;
+  margin-bottom: var(--s-200);
+  letter-spacing: -0.01em;
+}
+
+.sectionDescription {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+/* ─── STEPS GRID & CARDS (Part B3 Nested Radius) ─── */
+/* Outer card: 24px (--r-2xl), Padding: 8px (--s-100) -> Inner element radius: 16px (--r-xl) */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-400);
+  position: relative;
+  margin-bottom: var(--s-600);
+}
+
+.stepCard {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-2xl);
+  padding: var(--s-100);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-layout) var(--ease-base),
+              box-shadow var(--duration-layout) var(--ease-base),
+              border-color var(--duration-interaction) var(--ease-base);
+}
+.stepCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-border);
+  box-shadow: 0 16px 32px -10px rgba(13, 148, 136, 0.12);
+}
+
+/* Step Photo Container */
+.stepImageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-2);
+}
+
+.stepImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-layout) var(--ease-base);
+}
+.stepCard:hover .stepImg {
+  transform: scale(1.05);
+}
+
+/* Step Badge Pill overlay */
+.stepBadgePill {
+  position: absolute;
+  top: var(--s-100);
+  left: var(--s-100);
+  background-color: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 4px var(--s-100);
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  gap: var(--s-75);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.badgeNum {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 800;
+  color: var(--brand-border);
+}
+
+.badgeDivider {
+  width: 1px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.badgeTag {
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Step Content Body */
+.stepBody {
+  padding: var(--s-300) var(--s-200) var(--s-200);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.benefitHighlight {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.stepHeading {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: var(--s-100);
+}
+
+.stepParagraph {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+/* ─── MID-JOURNEY CONVERSION ANCHOR ─── */
+.journeyCtaRow {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-2xl);
+  padding: var(--s-300) var(--s-500);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-200);
+}
+
+.journeyNote {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.journeyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-75);
+  padding: 10px var(--s-200);
+  background-color: var(--brand);
+  color: #ffffff;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--brand);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+  transition: background-color var(--duration-interaction) var(--ease-base),
+              transform var(--duration-interaction) var(--ease-base);
+}
+.journeyBtn:hover {
+  background-color: var(--brand-hover);
+  transform: translateY(-1px);
+}
+.journeyBtn:active {
+  transform: scale(0.98);
+}
+.journeyBtn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ─── */
+@media (max-width: 1180px) and (min-width: 861px) {
+  .stepsGrid {
+    gap: var(--s-300);
+  }
+}
+
+@media (max-width: 860px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--s-400);
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .journeyCtaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .processSection {
+    padding: var(--s-600) 0;
+  }
+  .header {
+    margin-bottom: var(--s-500);
+  }
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .sectionDescription {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .stepBody {
+    padding: var(--s-200) var(--s-100) var(--s-100);
+  }
+  .stepHeading {
+    font-size: 17px;
+    line-height: 24px;
+  }
+  .stepParagraph {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .journeyCtaRow {
+    padding: var(--s-300) var(--s-200);
+    gap: var(--s-200);
+  }
+  .journeyNote {
+    text-align: center;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .journeyBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .sectionTitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .stepBadgePill {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}

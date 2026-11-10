@@ -1,0 +1,233 @@
+.servicesSection {
+  padding: var(--s-900) 0;
+  background-color: var(--surface-1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--s-700);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  margin-bottom: var(--s-100);
+}
+
+.sectionTitle {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-wrap: balance;
+  margin-bottom: var(--s-200);
+  letter-spacing: -0.01em;
+}
+
+.sectionDescription {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-400);
+}
+
+/* Card Outer (Part B3 Nested Radius: 24px outer, 8px padding -> inner 16px) */
+.serviceCard {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-2xl);
+  padding: var(--s-100);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-layout) var(--ease-base),
+              box-shadow var(--duration-layout) var(--ease-base),
+              border-color var(--duration-interaction) var(--ease-base);
+}
+.serviceCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-border);
+  box-shadow: 0 16px 32px -10px rgba(13, 148, 136, 0.12);
+}
+
+/* Photo Container */
+.cardImageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-2);
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-layout) var(--ease-base);
+}
+.serviceCard:hover .cardImg {
+  transform: scale(1.05);
+}
+
+.serviceBadge {
+  position: absolute;
+  top: var(--s-100);
+  left: var(--s-100);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-hover);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--r-full);
+  padding: 3px var(--s-100);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cardBody {
+  padding: var(--s-300) var(--s-200) var(--s-200);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardHeading {
+  font-size: 19px;
+  line-height: 26px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: var(--s-100);
+}
+
+.cardBenefit {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: var(--s-300);
+  text-wrap: pretty;
+}
+
+.pointList {
+  margin-top: auto;
+  padding-top: var(--s-200);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-75);
+  list-style: none;
+  margin-bottom: var(--s-200);
+}
+
+.pointItem {
+  display: flex;
+  align-items: center;
+  gap: var(--s-75);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.bulletCheck {
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.consultLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: var(--s-50);
+  transition: color var(--duration-interaction) var(--ease-base);
+}
+.consultLink:hover {
+  color: var(--brand-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) and (min-width: 861px) {
+  .cardsGrid {
+    gap: var(--s-300);
+  }
+}
+
+@media (max-width: 860px) and (min-width: 601px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-300);
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesSection {
+    padding: var(--s-600) 0;
+  }
+  .header {
+    margin-bottom: var(--s-500);
+  }
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--s-300);
+  }
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .sectionDescription {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .cardBody {
+    padding: var(--s-200) var(--s-100) var(--s-100);
+  }
+  .cardHeading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .cardBenefit {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: var(--s-200);
+  }
+  .pointList {
+    gap: 6px;
+    padding-top: var(--s-100);
+    margin-bottom: var(--s-100);
+  }
+  .pointItem {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sectionTitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
